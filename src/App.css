@@ -1,0 +1,129 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #ccc;
+  --border: var(--border-width) var(--border-style) var(--border-color);
+
+  --base-shadow-1: 0 0 1px #ccc;
+  --base-shadow-2: 0 1px 1px #ccc;
+  --base-shadow: var(--base-shadow-1), var(--base-shadow-2);
+}
+
+table {
+  table-layout: auto;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.table-container {
+  width: 100%;
+  border: var(--border);
+  border-radius: 6px;
+}
+thead {
+  background-color: #f5f5f5;
+  border-bottom: 2px var(--border-style) var(--border-color);
+  border-radius: 60px;
+}
+
+th {
+  font-weight: normal;
+  color: #555;
+}
+th:first-of-type {
+  border-top-left-radius: 6px;
+}
+th:last-of-type {
+  border-top-right-radius: 6px;
+}
+th,
+td {
+  --border-right: var(--border);
+  text-align: left;
+  border-right: var(--border-right);
+  padding: 4px 12px;
+}
+th:last-of-type,
+td:last-of-type {
+  --border-right: none;
+}
+td {
+  border-bottom: 1px solid #ccc;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+tr:last-of-type td {
+  border-bottom: none;
+}
+.header {
+  padding: 6px 0;
+  display: flex;
+  gap: 8px;
+}
+.base {
+  background-color: #fff;
+  border: var(--border);
+  border-radius: 4px;
+  box-shadow: var(--base-shadow);
+  padding: 6px 10px;
+  outline: none;
+}
+
+button.base:active {
+  box-shadow: var(--base-shadow-1);
+}
+button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.base:focus-visible,
+.base:active {
+  box-shadow: 0 0 0px 1.5px rgb(71, 204, 248);
+}
+
+tbody tr:hover {
+  background-color: #fbfbfb;
+}
+
+.popover {
+  position: relative;
+}
+
+.popover-content {
+  position: absolute;
+  top: calc(100% + 6px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+}
+.popover-footer {
+  display: flex;
+  gap: 4px;
+}
+.ghost {
+  box-shadow: none;
+  border: none;
+}
+.ghost:hover {
+  background-color: #f5f5f5;
+}
+.filter-row {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
+div.base:active,
+div.base:focus-visible {
+  box-shadow: var(--base-shadow);
+}
+.filter-row span {
+  color: #555;
+  font-size: 13px;
+  width: 40px;
+  text-align: right;
+}
